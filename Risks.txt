@@ -1,0 +1,5 @@
+Admin info accessible
+malicious attack
+data deletion
+cloud services go down
+unsecure http communication
