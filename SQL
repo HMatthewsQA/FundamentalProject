@@ -24,9 +24,11 @@ date datetime DEFAULT CURRENT_TIMESTAMP NOT NULL,
 outcome varchar(8) NOT NULL,
 patient_id int NOT NULL,
 facility_id int NOT NULL,
+doctor_id int NOT NULL,
 PRIMARY KEY (test_id),
 FOREIGN KEY (patient_id) REFERENCES patients (patient_id),
 FOREIGN KEY (facility_id) REFERENCES facilities (facility_id)
+FOREIGN KEY (doctor_id) REFERENCES doctors (doctor_id)
 );
 
 CREATE TABLE doctors (
@@ -35,6 +37,7 @@ first_name varchar(100) NOT NULL,
 surname varchar(100) NOT NULL,
 DOB datetime NOT NULL,
 gender varchar(10) NOT NULL,
-license_date datetime NOT NULL
+license_date datetime NOT NULL,
+PRIMARY KEY (doctor_id)
 );
 
