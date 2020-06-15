@@ -3,11 +3,6 @@
 <title>{{ title }} - Page</title>
     <a href="{{ url_for('home') }}">Home Page</a>
 	
-    {% if current_user.is_authenticated: %}
-	<a href="{{ url_for('logout') }}">Logout</a>
-	{% else %}
-    	<a href="{{ url_for('login') }}">Login Page</a>
-	{% endif %}
 </head>
 <body>
 <h1>{{  title  }} Page</h1>
