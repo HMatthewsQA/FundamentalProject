@@ -53,6 +53,6 @@ covered during training.
 
 Harry Matthews
 
-[erd]: https://github.com/HMatthewsQA/FundamentalProject/blob/master/Documents/ProjectERD.pngraw=true "Database ERD"
+[erd]: https://github.com/HMatthewsQA/FundamentalProject/blob/master/Documents/ProjectERD.png?raw=true "Database ERD"
 [riskassessment]: https://github.com/HMatthewsQA/FundamentalProject/blob/master/Documents/RiskAssessment.pdf?raw=true "Risk Assessment"
 [trello]: https://github.com/HMatthewsQA/FundamentalProject/blob/master/Documents/Trello%20Dev/Trello3.png?raw=true "Trello Board"
