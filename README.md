@@ -53,7 +53,7 @@ covered during training.
 
 Harry Matthews
 
-[erd]: (/Dcouments/ProjectERD.png?raw=true "Database ERD")
-[riskassessment]: (/Dcouments/RiskAssessmnet.pdf?raw=true "Risk Assessment")
-[trello]: (/Dcouments/Trello/Trello3.png?raw=true "Trello Board")
+[erd]: /Dcouments/ProjectERD.png?raw=true "Database ERD"
+[riskassessment]: /Dcouments/RiskAssessmnet.pdf?raw=true "Risk Assessment"
+[trello]: /Dcouments/Trello/Trello3.png?raw=true "Trello Board"
 [ci]:
