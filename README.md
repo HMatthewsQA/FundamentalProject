@@ -31,11 +31,17 @@ covered during training.
 
 ### Database Structure
 
+![ERD][erd]
+
 ### CI pipeline
 
 ## Project Tracking
 
+![Trello][trello]
+
 ## Risk Assessment
+
+![RiskAssessment][riskassessment]
 
 ## Testing
 
@@ -47,4 +53,7 @@ covered during training.
 
 Harry Matthews
 
-
+[erd]: (/Dcouments/ProjectERD.png?raw=true "Database ERD")
+[riskassessment]: (/Dcouments/RiskAssessmnet.pdf?raw=true "Risk Assessment")
+[trello]: (/Dcouments/Trello/Trello3.png?raw=true "Trello Board")
+[ci]:
