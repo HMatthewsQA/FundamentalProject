@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, request
 from application import app, db
 from application.models import Facilities, Patients, Doctors, Tests
-from application.forms import RegisterFacilityForm, RegisterPatientForm, RegisterDoctorForm
+from application.forms import RegisterFacilityForm, RegisterPatientForm, RegisterDoctorForm, TestForm, DeleteForm
 
 @app.route('/')
 @app.route('/home')
@@ -76,6 +76,30 @@ def tests():
     all_tests = Tests.query.all()
     return render_template('tests.html', title='Tests:', tests=all_tests)
 
-@app.route('/tests/register')
+@app.route('/tests/register', methods=['GET', 'POST'])
 def register_test():
-    return render_template('register_test.html', title='RegisterTest:')
+    form = TestForm()
+    if form.validate_on_submit():
+        doctor = Doctors.query.filter_by(id=form.doctor.data).first()
+        facility = Facilities.query.filter_by(id=form.facility.data).first()
+        patient = Patients.query.filter_by(id=form.patient.data).first()
+        test = Tests(
+                outcome = form.outcome.data,
+                facility = facility,
+                patient = patient,
+                doctor = doctor
+        )
+        db.session.add(test)
+        db.session.commit()
+        return redirect(url_for('tests'))
+    return render_template('register_test.html', title='RegisterTest:',form=form)
+
+@app.route('/tests/delete', methods=['GET', 'POST'])
+def delete_test():
+    form = DeleteForm()
+    if form.validate_on_submit():
+        test = Tests.query.filter_by(id=form.id.data).first()
+        db.session.delete(test)
+        db.session.commit()
+        return redirect(url_for('tests'))
+    return render_template('delete_test.html', title='DeleteTest', form=form)

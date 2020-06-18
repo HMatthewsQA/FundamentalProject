@@ -1,4 +1,60 @@
 {% extends 'layout.html' %}
 {% block body_content %}
-<h1> Register Test </h1>
+<h1> Register a Test </h1>
+
+<div class='form'>
+        <form method='POST' action=''>
+                <div class='form_group'>
+			{{ form.hidden_tag() }}
+                        {{ form.outcome.label }}
+                        {{ form.outcome }}
+                        {% if form.outcome.errors %}
+                                <div class='error'>
+                                        {% for error in form.outcome.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+                <br>
+                <div class='form_group'>
+                        {{ form.patient.label }}
+                        {{ form.patient }}
+                        {% if form.patient.errors %}
+                                <div class='error'>
+                                        {% for error in form.patient.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+                <br>
+                <div class='form_group'>
+                        {{ form.facility.label }}
+                        {{ form.facility }}
+                        {% if form.facility.errors %}
+                                <div class='error'>
+                                        {% for error in form.facility.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+		<br>
+		<div class='form_group'>
+                        {{ form.doctor.label }}
+                        {{ form.doctor }}
+                        {% if form.doctor.errors %}
+                                <div class='error'>
+                                        {% for error in form.doctor.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+                <div class='form_group'>
+                {{ form.submit }}
+            </div>
+        </form>
+
 {% endblock %}

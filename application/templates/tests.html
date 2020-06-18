@@ -5,6 +5,9 @@
 		{% for test in tests %}
 			<div>
         			<h3>{{ test.outcome }}</h3>
+				<span> <i>{{ test.patient.first_name }} {{ test.patient.last_name }}</i></span>
+				<span> <i>{{ test.doctor.first_name }} {{ test.doctor.last_name }}</i></span>
+				<span>on the <i>{{ test.date }}</i> at <i>{{ test.facility.facility_name }}</i></span>
     			</div>
 		{% endfor %}
 	{% else %}
@@ -13,4 +16,6 @@
 	<form action="{{ url_for('register_test') }}">
                 <button type="submit">Register a Test</button>
         </form>
+	<form action="{{ url_for('delete_test') }}">
+       		<button type="submit">Delete a Test</button>
 {% endblock %}

@@ -82,3 +82,30 @@ class RegisterDoctorForm(FlaskForm):
                 DataRequired()
                 ])
     submit = SubmitField('Add Doctor')
+
+class TestForm(FlaskForm):
+    outcome = StringField('Outcome: Postive/Negative',
+            validators = [
+                DataRequired(),
+                Length(min=8, max=8)
+                ])
+    patient = IntegerField('PatientID:',
+            validators = [
+                DataRequired()
+                ])
+    facility = IntegerField('FacilityID:',
+            validators = [
+                DataRequired()
+                ])
+    doctor = IntegerField('DoctorID:',
+            validators = [
+                DataRequired()
+                ])
+    submit = SubmitField('Add Test')
+
+class DeleteForm(FlaskForm):
+    id = IntegerField('TestID:',
+            validators = [
+                DataRequired()
+                ])
+    submit = SubmitField('Delete Test')
