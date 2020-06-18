@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+        <p>Lists of Patients!</p>
+        {% if patients %}
+                {% for patient in patients %}
+                        <div>
+                                <h3>{{ patient.first_name }}</h3>
+                        </div>
+                {% endfor %}
+        {% else %}
+                <p>There are no patients</p>
+        {% endif %}
+{% endblock %}

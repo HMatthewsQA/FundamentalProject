@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+	<p>Lists of Corona tests!</p>
+	{% if tests %}
+		{% for test in tests %}
+			<div>
+        			<h3>{{ test.outcome }}</h3>
+    			</div>
+		{% endfor %}
+	{% else %}
+		<p>There are no tests</p>
+	{% endif %}
+{% endblock %}

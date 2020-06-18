@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+        <p>Lists of Facilities!</p>
+        {% if facilities %}
+                {% for facility in facilities %}
+                        <div>
+                                <h3>{{ facilities.name }}</h3>
+                        </div>
+                {% endfor %}
+        {% else %}
+                <p>There are no facilities</p>
+        {% endif %}
+{% endblock %}
