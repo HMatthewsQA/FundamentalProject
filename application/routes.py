@@ -41,7 +41,7 @@ def register_patient():
                 last_name = form.last_name.data,
                 dob = form.dob.data,
                 gender = form.gender.data,
-                address = form.adress.data,
+                address = form.address.data,
                 telephone = form.telephone.data,
                 email = form.email.data
         )

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, BooleanField, IntegerField, DateTimeField
+from wtforms import StringField, SubmitField, BooleanField, IntegerField, DateField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from application.models import Facilities, Patients, Doctors, Tests
 
@@ -31,7 +31,7 @@ class RegisterPatientForm(FlaskForm):
                 DataRequired(),
                 Length(min=2, max=30)
                 ])
-    dob = DateTimeField('Data of Birth',
+    dob = DateField('Data of Birth: d/m/y', format='%d/%m/%y',
             validators = [
                 DataRequired()
                 ])
@@ -68,7 +68,7 @@ class RegisterDoctorForm(FlaskForm):
                 DataRequired(),
                 Length(min=2, max=30)
                 ])
-    dob = DateTimeField('Data of Birth',
+    dob = DateField('Data of Birth: d/m/y', format='%d/%m/%y',
             validators = [
                 DataRequired()
                 ])
@@ -77,7 +77,7 @@ class RegisterDoctorForm(FlaskForm):
                 DataRequired(),
                 Length(min=1, max = 1)
                 ])
-    license_date = DateTimeField('License Date',
+    license_date = DateField('License Date: d/m/y', format='%d/%m/%y',
             validators = [
                 DataRequired()
                 ])
