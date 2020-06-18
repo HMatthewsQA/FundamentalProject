@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+<h1> Register a Doctor </h1>
+
+<div class='form'>
+        <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                <div class='form_group'>
+                        {{ form.first_name.label }}
+                        {{ form.first_name }}
+                        {% if form.first_name.errors %}
+                                <div class='error'>
+                                        {% for error in form.first_name.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+                <br>
+                <div class='form_group'>
+                        {{ form.last_name.label }}
+                        {{ form.last_name }}
+                        {% if form.last_name.errors %}
+                                <div class='error'>
+                                        {% for error in form.last_name.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+                <br>
+                <div class='form_group'>
+                        {{ form.dob.label }}
+                        {{ form.dob }}
+                        {% if form.dob.errors %}
+                                <div class='error'>
+                                        {% for error in form.dob.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+		<br>
+                <div class='form_group'>
+                        {{ form.gender.label }}
+                        {{ form.gender }}
+                        {% if form.gender.errors %}
+                                <div class='error'>
+                                        {% for error in form.gender.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+		<br>
+                <div class='form_group'>
+                        {{ form.license_date.label }}
+                        {{ form.license_date }}
+                        {% if form.license_date.errors %}
+                                <div class='error'>
+                                        {% for error in form.license_date.errors %}
+                                                <span>{{ error }} </span>
+                                        {% endfor %}
+                                </div>
+                        {% endif %}
+                </div>
+                <div class='form_group'>
+                {{ form.submit }}
+            </div>
+        </form>
+        </div>
+
+{% endblock %}
+~              

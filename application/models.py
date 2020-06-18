@@ -4,7 +4,7 @@ from datetime import datetime
 
 class Facilities(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    Facility_name = db.Column(db.String(100), nullable=False, unique=True)
+    facility_name = db.Column(db.String(100), nullable=False, unique=True)
     address = db.Column(db.String(500), nullable=False, unique=True)
     capacity = db.Column(db.Integer, nullable=False)
 
@@ -12,7 +12,7 @@ class Patients(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
-    DOB = db.Column(db.DateTime, nullable=False)
+    dob = db.Column(db.DateTime, nullable=False)
     gender = db.Column(db.String(1), nullable=False)
     address = db.Column(db.String(500), nullable=False)
     telephone = db.Column(db.String(11), nullable=False)
@@ -22,7 +22,7 @@ class Doctors(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
-    DOB = db.Column(db.DateTime, nullable=False)
+    dob = db.Column(db.DateTime, nullable=False)
     gender = db.Column(db.String(1), nullable=False)
     license_date = db.Column(db.DateTime, nullable=False)
 

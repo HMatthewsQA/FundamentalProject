@@ -4,10 +4,14 @@
         {% if doctors %}
                 {% for doctor in doctors %}
                         <div>
-                                <h3>{{ doctor.id }}</h3>
+				<h3>{{ doctor.first_name }} {{ doctor.last_name }}</h3>
+				<span> {{ doctor.dob }} {{ doctor.gender }} {{ doctor.license_date }}</span>
                         </div>
                 {% endfor %}
         {% else %}
                 <p>There are no doctors</p>
         {% endif %}
+	<form action="{{ url_for('register_doctor') }}">
+        	<button type="submit">Register a Doctor</button>
+	</form>
 {% endblock %}

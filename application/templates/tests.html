@@ -10,4 +10,7 @@
 	{% else %}
 		<p>There are no tests</p>
 	{% endif %}
+	<form action="{{ url_for('register_test') }}">
+                <button type="submit">Register a Test</button>
+        </form>
 {% endblock %}

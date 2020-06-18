@@ -4,10 +4,15 @@
         {% if facilities %}
                 {% for facility in facilities %}
                         <div>
-                                <h3>{{ facilities.name }}</h3>
+                                <h3>{{ facility.facility_name }}</h3>
+				<span> <i> {{ facility.address }} </i></span>
+				<span> capacity of {{ facility.capacity }}</span>
                         </div>
                 {% endfor %}
         {% else %}
                 <p>There are no facilities</p>
         {% endif %}
+	<form action="{{ url_for('register_facility') }}">
+                <button type="submit">Register a Facility</button>
+        </form>
 {% endblock %}
