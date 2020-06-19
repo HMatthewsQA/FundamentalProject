@@ -1,0 +1,13 @@
+[Unit]
+Description=Corona Application
+[Service]
+User=pythonadm
+WorkingDirectory=/opt/corona-app
+ExecStart=/bin/bash \
+	-c 'cd /opt/corona-app && \
+	source ./venv/bin/activate && \
+	python ./app.py'
+Environment=MY_SECRET_KEY={{MY_SECRET_KEY}}
+Environment=DATABASE_URI={{DATABASE_URI}}
+[Install]
+WantedBy=multi-user.target
