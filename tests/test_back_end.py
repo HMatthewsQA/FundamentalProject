@@ -68,3 +68,65 @@ class TestViews(TestBase):
     def test_test_view(self):
         response = self.client.get(url_for('tests'))
         self.assertEqual(response.status_code, 200)
+
+class TestPosts(TestBase):
+
+    def test_add_facility(self):
+        with self.client:
+            response = self.client.post(
+                '/facilities/register',
+                data=dict(
+                    facility_name="Test Name",
+                    address="Test Address",
+                    capacity="50"
+                ),
+                follow_redirects=True
+            )
+            self.assertIn(b'Test Name', response.data)
+
+    def test_add_patient(self):
+        with self.client:
+            response = self.client.post(
+                '/patients/register',
+                data=dict(
+                    first_name = "Test Patient Name",
+                    last_name = "Test Patient Last",
+                    dob = "01/01/20",
+                    gender = "M",
+                    address = "Test Street",
+                    telephone = "07656897345",
+                    email = "Test Email"
+                ),
+                follow_redirects=True
+            )
+            self.assertIn(b'Test Patient Name', response.data)
+
+    def test_add_doctor(self):
+        with self.client:
+            response = self.client.post(
+                '/doctors/register',
+                data=dict(
+                    first_name = "Test Doctor",
+                    last_name = "Test Docttor Last",
+                    dob = "01/01/10",
+                    gender = "F",
+                    license_date = "10/10/19"
+                ),
+                follow_redirects=True
+            )
+            self.assertIn(b'Test Doctor', response.data)
+
+    def test_add_test(self):
+        with self.client:
+            response = self.client.post(
+                '/tests/register',
+                data=dict(
+                    date = "20/06/20",
+                    outcome = "positive",
+                    facility_id = "1",
+                    patient_id = "1",
+                    doctor_id = "1"
+                ),
+                follow_redirects=True
+            )
+            self.assertIn(b'positive', response.data)
