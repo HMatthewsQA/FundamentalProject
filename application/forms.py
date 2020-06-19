@@ -103,6 +103,47 @@ class TestForm(FlaskForm):
                 ])
     submit = SubmitField('Add Test')
 
+class UpdatePatientForm(FlaskForm):
+    id = IntegerField('PatientID',
+            validators = [
+                DataRequired()
+                ])
+    first_name = StringField('First Name',
+            validators = [
+                DataRequired(),
+                Length(min=2, max=30)
+                ])
+    last_name = StringField('Last Name',
+            validators = [
+                DataRequired(),
+                Length(min=2, max=30)
+                ])
+    dob = DateField('Data of Birth: d/m/y', format='%d/%m/%y',
+            validators = [
+                DataRequired()
+                ])
+    gender = StringField('Gender: M/F',
+            validators = [
+                DataRequired(),
+                Length(min=1, max = 1)
+                ])
+    address = StringField('Address',
+            validators = [
+                DataRequired(),
+                Length(min=2, max=500)
+                ])
+    telephone = StringField('Telephone no.',
+            validators = [
+                DataRequired(),
+                Length(min=11, max=11)
+                ])
+    email = StringField('Email',
+            validators = [
+                DataRequired(),
+                Email()
+                ])
+    submit = SubmitField('Update')
+
 class DeleteForm(FlaskForm):
     id = IntegerField('TestID:',
             validators = [

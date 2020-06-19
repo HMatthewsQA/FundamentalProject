@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, request
 from application import app, db
 from application.models import Facilities, Patients, Doctors, Tests
-from application.forms import RegisterFacilityForm, RegisterPatientForm, RegisterDoctorForm, TestForm, DeleteForm
+from application.forms import UpdatePatientForm, RegisterFacilityForm, RegisterPatientForm, RegisterDoctorForm, TestForm, DeleteForm
 
 @app.route('/')
 @app.route('/home')
@@ -31,6 +31,22 @@ def register_facility():
 def patients():
     all_patients = Patients.query.all()
     return render_template('patients.html', title='Patients:', patients=all_patients)
+
+@app.route('/patients/update', methods=['GET', 'POST'])
+def update_patient():
+    form = UpdatePatientForm()
+    if form.validate_on_submit():
+        patient = Patients.query.filter_by(id=form.id.data).first()
+        patient.first_name = form.first_name.data
+        patient.last_name = form.last_name.data
+        patient.dob = form.dob.data
+        patient.gender = form.gender.data
+        patient.address = form.address.data
+        patient.telephone = form.telephone.data
+        patient.email = form.email.data
+        db.session.commit()
+        return redirect(url_for('patients'))
+    return render_template('update_patient.html', title='UpdatePatient',form=form)
 
 @app.route('/patients/register', methods=['GET', 'POST'])
 def register_patient():    
