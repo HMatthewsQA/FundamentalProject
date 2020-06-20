@@ -43,7 +43,9 @@ The application I have chosen to create is a corona virus testing database and a
 
 I have created an entity relationship diagram, or ERD, to help illustrate the relationships taking place in my database that operates behind the scenes of my application. 
 
+
 ![ERD][erd]
+
 
 The database makes use of one to many relationships as well as primary and foreign keys to assign facilities, patients and doctors to a test that has been performed and added.
 
@@ -51,7 +53,9 @@ The database makes use of one to many relationships as well as primary and forei
 
 I have created an image to show the process of my continous integration pipeline.
 
+
 ![CI][ci]
+
 
 
 
@@ -59,13 +63,17 @@ I have created an image to show the process of my continous integration pipeline
 
 Below is a screenshot from my trello board towards the end of the development process.
 
+
 ![Trello][trello]
+
 
 Here I have tracked user stories and tasks for completion so that development runs smoothly and to prevent tasks being forgotten or objectives being missed.
 
 ## Risk Assessment
 
+
 ![RiskAssessment][riskassessment]
+
 
 I have completed a risk assessment to help me understand the ways that my application and its resources might come under threat and how I can plan to mitigate or prevent these circumstances.
 
@@ -73,7 +81,9 @@ I have completed a risk assessment to help me understand the ways that my applic
 
 I have carried out a number of tests on my project, the results of these can be found in my test results folder. I have included both unit and integration tests.
 
+
 ![Coverage][coverage]
+
 
 I have achieved 80% coverage in my testing. This is because while I have tested all of my models and forms, I have not yet implemented tests for all of the routes that make up my application.
 
