@@ -49,7 +49,7 @@ The database makes use of one to many relationships as well as primary and forei
 
 ### CI pipeline
 
-
+I have created an image to show the process of my continous integration pipeline.
 
 ![CI][ci]
 
@@ -57,35 +57,33 @@ The database makes use of one to many relationships as well as primary and forei
 
 ## Project Tracking
 
-
+Below is a screenshot from my trello board towards the end of the development process.
 
 ![Trello][trello]
 
-
+Here I have tracked user stories and tasks for completion so that development runs smoothly and to prevent tasks being forgotten or objectives being missed.
 
 ## Risk Assessment
 
-
-
 ![RiskAssessment][riskassessment]
 
-
+I have completed a risk assessment to help me understand the ways that my application and its resources might come under threat and how I can plan to mitigate or prevent these circumstances.
 
 ## Testing
 
-
+I have carried out a number of tests on my project, the results of these can be found in my test results folder. I have included both unit and integration tests.
 
 ![Coverage][coverage]
 
-
+I have achieved 80% coverage in my testing. This is because while I have tested all of my models and forms, I have not yet implemented tests for all of the routes that make up my application.
 
 ## Known Issues
 
-
+There are currently some issues in the application and database with elements of data that are supposed to be unique as I have not yet implemented validation into the record creation process. This means that if a user tries to create a record with data that is already in use in a field that is supposed to be unique it will cause an error.
 
 ## Future Improvements
 
-
+For future improvements of my project I would like to implement a better design for the user interface of the application. This will make it more user friendly and make performing interactions easier. Additionally I would like to add more tests so that I can achieve a better coverage to ensure that all aspects of the application and database are being tested and performing well. Furthermore I would like to implement more validation into the application to prevent avoidable errors from being thrown up when a user tries to input data.
 
 ## Authors
 
