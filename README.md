@@ -57,7 +57,14 @@ I have created an image to show the process of my continous integration pipeline
 ![CI][ci]
 
 
+This pipeline allows for a streamlined and autonomous process of development and deployment reducing time between when the project is updated and it going live. The process is as follows:
 
+* Code is developed in python
+* It can be pushed and pulled to the git version control system
+* Trello board is used for project tracking
+* A webhook to jenkins will make automate the process of updating the environment
+* Tests can be carried out on the project
+* The flask application is deployed on the virtual machine running jenkins with gunicorn integration and it connects to our sql server for database access
 
 ## Project Tracking
 
